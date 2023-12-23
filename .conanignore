@@ -1,0 +1,7 @@
+.*
+.*/*
+dev-*
+LICENSE*
+Makefile
+pyproject.toml
+README*
