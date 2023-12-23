@@ -32,7 +32,7 @@ lint: .venv/.dev-requirements.stamp
 	$(ENV_PYTHON) -m ruff check .
 
 mypy: .venv/.dev-requirements.stamp
-	$(ENV_PYTHON) -m mypy extensions
+	$(ENV_PYTHON) -m mypy
 
 clean:
 

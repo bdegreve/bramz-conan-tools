@@ -10,6 +10,31 @@ dependencies and other settings based on the Conan profile.
 
 ## How to Use?
 
+### As python_requires
+
+First, add this recipe to your cache by exporting it from this git repo:
+```
+conan export .
+```
+
+Then you can add it to your own recipe as following:
+```
+from conan import ConanFile
+
+
+class Gizmo(ConanFile):
+    name = "gizmo"
+    version = "1.0"
+
+    python_requires = "bramz-conan-tools/1.0.0"
+
+    def generate(self):
+        props = self.python_requires["bramz-conan-tools"].module.VSCodeCCppProperties(self)
+        props.generate(self)
+```
+
+### As Global Generator
+
 To [install the extensions globally](https://docs.conan.io/2.0/reference/extensions/custom_generators.html#using-global-custom-generators), use following command:
 
 ```
