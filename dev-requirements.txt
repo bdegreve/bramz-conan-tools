@@ -1,0 +1,4 @@
+ruff
+conan
+mypy
+pre-commit
